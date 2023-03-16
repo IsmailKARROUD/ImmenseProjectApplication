@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imense/Widgets/stats.dart';
 
 class Overview extends StatefulWidget {
   const Overview({super.key});
@@ -14,6 +15,7 @@ class _OverviewState extends State<Overview> {
       appBar: AppBar(
         title: const Text("Overview"),
         actions: [
+          //TODO:the icon changes when there's a notification
           IconButton(
               onPressed: () {},
               icon: const Icon(
@@ -39,10 +41,7 @@ class _OverviewState extends State<Overview> {
       ),
       body: Column(
         children: [
-          Container(),
-          Container(),
-          Container(),
-          Container(),
+          Stats(),
         ],
       ),
     );
