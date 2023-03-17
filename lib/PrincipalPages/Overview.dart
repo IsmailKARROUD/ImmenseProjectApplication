@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:imense/Widgets/Pop-Up_screen.dart';
+import 'package:imense/Widgets/statistics.dart';
 import 'package:imense/Widgets/stats.dart';
 
 class Overview extends StatefulWidget {
@@ -39,10 +41,40 @@ class _OverviewState extends State<Overview> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Stats(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stats(),
+            Statistics(
+              title: 'My observations',
+              subtitle: 'Statistics',
+              graph: const Text("data"),
+              listofFilters: const [
+                'Daily',
+                'Safety',
+                'Excellent',
+                'Work clothes,E.P.I',
+                'Bad condition'
+              ],
+              options: [
+                OptionPopUp(Icons.home, "Option 1", () {
+                  // Do something when Option 1 is pressed
+                }),
+                OptionPopUp(Icons.home, "Option 2", () {
+                  // Do something when Option 2 is pressed
+                }),
+                OptionPopUp(Icons.home, "Option 3", () {
+                  // Do something when Option 3 is pressed
+                })
+              ],
+            ),
+            const Statistics(
+              title: 'My observations',
+              subtitle: 'Statistics',
+              graph: Text("data"),
+            ),
+          ],
+        ),
       ),
     );
   }

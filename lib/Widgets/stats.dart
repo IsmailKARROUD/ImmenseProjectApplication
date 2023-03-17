@@ -29,6 +29,7 @@ class Stats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      padding: const EdgeInsets.only(top: 16, bottom: 16),
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
