@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:imense/PrincipalPages/Overview.dart';
 import 'package:imense/Widgets/ManualAlert.dart';
@@ -38,60 +39,69 @@ class _MyAppState extends State<MyApp> {
                 fontSize: 20)),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Builder(builder: (context) {
-        return Scaffold(
-          body: _widgetOptions.elementAt(_selectedIndex),
-          bottomNavigationBar: BottomAppBar(
-            shape: const CircularNotchedRectangle(),
-            notchMargin: 8.0,
-            child: SizedBox(
-              height: 60,
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  //using padding to give space to FloatingActionButton
-                  Padding(
-                    padding: const EdgeInsets.only(left: 40, right: 100),
-                    child: IconButton(
-                      icon: const Icon(Icons.home),
+      home: AnimatedSplashScreen(
+        duration: 750,
+        animationDuration: const Duration(milliseconds: 250),
+        splash: Image.asset(
+          'lib/assets/spleshScreen.png',
+          fit: BoxFit.cover,
+        ),
+        splashIconSize: double.maxFinite,
+        nextScreen: Builder(builder: (context) {
+          return Scaffold(
+            body: _widgetOptions.elementAt(_selectedIndex),
+            bottomNavigationBar: BottomAppBar(
+              shape: const CircularNotchedRectangle(),
+              notchMargin: 8.0,
+              child: SizedBox(
+                height: 60,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    //using padding to give space to FloatingActionButton
+                    Padding(
+                      padding: const EdgeInsets.only(left: 40, right: 100),
+                      child: IconButton(
+                        icon: const Icon(Icons.home),
+                        onPressed: () {
+                          setState(() {
+                            _selectedIndex = 0;
+                          });
+                        },
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.business),
                       onPressed: () {
                         setState(() {
-                          _selectedIndex = 0;
+                          _selectedIndex = 1;
                         });
                       },
                     ),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.business),
-                    onPressed: () {
-                      setState(() {
-                        _selectedIndex = 1;
-                      });
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.school),
-                    onPressed: () {
-                      setState(() {
-                        _selectedIndex = 2;
-                      });
-                    },
-                  ),
-                ],
+                    IconButton(
+                      icon: const Icon(Icons.school),
+                      onPressed: () {
+                        setState(() {
+                          _selectedIndex = 2;
+                        });
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ManualAlert())),
-            backgroundColor: Colors.blue,
-            child: const Icon(Icons.add),
-          ),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-        );
-      }),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const ManualAlert())),
+              backgroundColor: Colors.blue,
+              child: const Icon(Icons.add),
+            ),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
+          );
+        }),
+      ),
     );
   }
 }
