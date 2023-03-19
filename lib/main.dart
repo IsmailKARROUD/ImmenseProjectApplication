@@ -1,7 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:imense/PrincipalPages/Overview.dart';
-import 'package:imense/Widgets/ManualAlert.dart';
+import 'package:imense/PrincipalPages/ManualAlert.dart';
 
 void main() => runApp(MyApp());
 
