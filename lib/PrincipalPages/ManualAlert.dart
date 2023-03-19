@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:direct_select/direct_select.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:imense/Widgets/customDirectSelect.dart';
@@ -9,6 +6,7 @@ class ManualAlert extends StatefulWidget {
   const ManualAlert({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ManualAlertState createState() => _ManualAlertState();
 }
 
@@ -18,15 +16,16 @@ class _ManualAlertState extends State<ManualAlert> {
   bool? _inOrOutside;
   bool? _roOrEq;
   int? _level;
+  // ignore: unused_field
   String? _roomName;
+  // ignore: unused_field
   String? _equipementName;
-  Duration? _timeOfJob;
   int _selectedIndexTime = 0;
   int _selectedIndexSite = 0;
   int _selectedIndexZone = 0;
   bool _siteBookMark = false;
   bool _zoneBookMark = false;
-  bool _toAddCustomRoom = false;
+  bool _toAddCustomRE = false;
 
   late List<String> siteListExample;
   late List<String> zoonListExample;
@@ -224,15 +223,14 @@ class _ManualAlertState extends State<ManualAlert> {
                                 action: TextButton(
                                     onPressed: () {
                                       setState(() {
-                                        _toAddCustomRoom = !_toAddCustomRoom;
+                                        _toAddCustomRE = !_toAddCustomRE;
                                       });
                                     },
-                                    child: Text(_toAddCustomRoom
-                                        ? "choose"
-                                        : "+ add"))),
+                                    child: Text(
+                                        _toAddCustomRE ? "choose" : "+ add"))),
                             AnimatedCrossFade(
                               duration: const Duration(milliseconds: 250),
-                              crossFadeState: _toAddCustomRoom
+                              crossFadeState: _toAddCustomRE
                                   ? CrossFadeState.showFirst
                                   : CrossFadeState.showSecond,
                               firstChild: TextFormField(
@@ -251,7 +249,13 @@ class _ManualAlertState extends State<ManualAlert> {
                                   return null;
                                 },
                                 onChanged: (value) {
-                                  setState(() {});
+                                  setState(() {
+                                    if (!_roOrEq!) {
+                                      _roomName = value;
+                                    } else {
+                                      _equipementName = value;
+                                    }
+                                  });
                                 },
                               ),
                               secondChild: CustomDirectSelect(

@@ -31,10 +31,10 @@ class CustomPieChartState extends State<CustomPieChart> {
         title: '${widget.dataPie[index].value}%',
         radius: isTouched ? 60.0 : 50.0,
         titleStyle: TextStyle(
-          fontSize: isTouched ? 25.0 : 16.0,
+          fontSize: isTouched ? 25.0 : 13.0,
           fontWeight: FontWeight.bold,
           color: Colors.white,
-          shadows: [Shadow(color: Colors.black, blurRadius: 2)],
+          shadows: const [Shadow(color: Colors.black, blurRadius: 2)],
         ),
       );
     });

@@ -49,7 +49,7 @@ class _OverviewState extends State<Overview> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Stats(),
+            const Stats(),
             Statistics(
               title: 'My observations',
               subtitle: 'Statistics',
@@ -104,6 +104,20 @@ class _OverviewState extends State<Overview> {
             Statistics(
               title: 'My observations',
               subtitle: 'Statistics',
+              options: [
+                OptionPopUp(Icons.home, "Option 1", () {
+                  // Do something when Option 1 is pressed
+                }),
+                OptionPopUp(Icons.home, "Option 2", () {
+                  // Do something when Option 2 is pressed
+                }),
+                OptionPopUp(Icons.home, "Option 3", () {
+                  // Do something when Option 3 is pressed
+                }),
+                OptionPopUp(Icons.home, "Option 4", () {
+                  // Do something when Option 4 is pressed
+                })
+              ],
               graph: CustomPieChart(dataPie: [
                 PieChartDataModel(
                   name: 'Apple',
