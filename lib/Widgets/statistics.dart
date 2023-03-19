@@ -26,50 +26,60 @@ class Statistics extends StatefulWidget {
 class _StatisticsState extends State<Statistics> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 40,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: widget.listofFilters.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Card(
-                elevation: 2,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: Text(widget.listofFilters[index]),
-                    ),
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.close,
-                          size: 20,
-                        ))
-                  ],
-                ),
-              );
-            },
-          ),
-        ),
-        Card(
-          child: ListTile(
-            title: Text(widget.title),
-            subtitle: Text(widget.subtitle),
-            trailing: widget.options == null
-                ? null
-                : IconButton(
-                    icon: const Icon(Icons.more_vert),
-                    onPressed: () async {
-                      return popUPScreen(context, "Filter by", widget.options!);
-                    },
+    return SizedBox(
+      child: Column(
+        children: [
+          //show the filters
+          SizedBox(
+            height: 40,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: widget.listofFilters.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Card(
+                  elevation: 2,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Text(widget.listofFilters[index]),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.close,
+                            size: 20,
+                          ))
+                    ],
                   ),
+                );
+              },
+            ),
           ),
-        ),
-      ],
+          //show the graph
+          Card(
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text(widget.title),
+                  subtitle: Text(widget.subtitle),
+                  trailing: widget.options == null
+                      ? null
+                      : IconButton(
+                          icon: const Icon(Icons.more_vert),
+                          onPressed: () async {
+                            return popUPScreen(
+                                context, "Filter by", widget.options!);
+                          },
+                        ),
+                ),
+                widget.graph
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
