@@ -17,7 +17,7 @@ class Indicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Wrap(
       children: <Widget>[
         Container(
           width: size,
@@ -32,6 +32,8 @@ class Indicator extends StatelessWidget {
         ),
         Text(
           text,
+          overflow: TextOverflow.ellipsis,
+          softWrap: true,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,

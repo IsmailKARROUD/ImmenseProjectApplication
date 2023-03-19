@@ -102,33 +102,28 @@ class _OverviewState extends State<Overview> {
               ],
             ),
             Statistics(
-              title: 'My observations',
-              subtitle: 'Statistics',
+              title: 'Progress',
+              subtitle: 'Today',
               graph: CustomPieChart(dataPie: [
                 PieChartDataModel(
-                  name: 'Apple',
+                  name: 'Pending',
                   value: 25.0,
-                  color: Colors.red,
+                  color: Colors.blue,
                 ),
                 PieChartDataModel(
-                  name: 'Orange',
+                  name: 'Progress',
                   value: 15.0,
-                  color: Colors.orange,
-                ),
-                PieChartDataModel(
-                  name: 'Banana',
-                  value: 10.0,
                   color: Colors.yellow,
                 ),
                 PieChartDataModel(
-                  name: 'Grape',
-                  value: 20.0,
-                  color: Colors.purple,
+                  name: 'Resolved',
+                  value: 10.0,
+                  color: Colors.green,
                 ),
                 PieChartDataModel(
-                  name: 'Watermelon',
-                  value: 30.0,
-                  color: Colors.green,
+                  name: 'Closed',
+                  value: 20.0,
+                  color: Colors.grey,
                 )
               ]),
             ),
