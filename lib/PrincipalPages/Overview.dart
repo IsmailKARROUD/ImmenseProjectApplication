@@ -22,7 +22,6 @@ class _OverviewState extends State<Overview> {
       appBar: AppBar(
         title: const Text("Overview"),
         actions: [
-          //TODO:the icon changes when there's a notification
           IconButton(
               onPressed: () {},
               icon: const Icon(
@@ -49,7 +48,7 @@ class _OverviewState extends State<Overview> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Stats(),
+            const Stats(),
             Statistics(
               title: 'My observations',
               subtitle: 'Statistics',
