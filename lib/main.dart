@@ -2,7 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:imense/PrincipalPages/BasedPage.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -19,7 +19,6 @@ class _MyAppState extends State<MyApp> {
         primaryColor: Colors.white,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
-            //TODO:check color
             color: Colors.white,
             iconTheme: IconThemeData(color: Colors.black),
             titleTextStyle: TextStyle(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Stats extends StatelessWidget {
-  Stats({Key? key}) : super(key: key);
+  const Stats({Key? key}) : super(key: key);
 
   SizedBox customCard(
       IconData icon, Color backgroundColorIcon, int number, String subtitle) {

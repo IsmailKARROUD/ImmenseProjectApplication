@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:direct_select/direct_select.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:imense/Widgets/customDirectSelect.dart';
@@ -18,9 +15,10 @@ class _ManualAlertState extends State<ManualAlert> {
   bool? _inOrOutside;
   bool? _roOrEq;
   int? _level;
+  // ignore: unused_field
   String? _roomName;
+  // ignore: unused_field
   String? _equipementName;
-  Duration? _timeOfJob;
   int _selectedIndexTime = 0;
   int _selectedIndexSite = 0;
   int _selectedIndexZone = 0;
@@ -251,7 +249,13 @@ class _ManualAlertState extends State<ManualAlert> {
                                   return null;
                                 },
                                 onChanged: (value) {
-                                  setState(() {});
+                                  setState(() {
+                                    if (_roOrEq!) {
+                                      _roomName = value;
+                                    } else {
+                                      _equipementName = value;
+                                    }
+                                  });
                                 },
                               ),
                               secondChild: CustomDirectSelect(
