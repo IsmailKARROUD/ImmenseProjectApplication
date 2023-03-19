@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:imense/Widgets/customDirectSelect.dart';
 
 class ManualAlert extends StatefulWidget {
-  const ManualAlert({Key? key}) : super(key: key);
+  ManualAlert({Key? key}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api

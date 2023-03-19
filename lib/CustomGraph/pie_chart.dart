@@ -31,7 +31,7 @@ class CustomPieChartState extends State<CustomPieChart> {
         title: '${widget.dataPie[index].value}%',
         radius: isTouched ? 60.0 : 50.0,
         titleStyle: TextStyle(
-          fontSize: isTouched ? 25.0 : 13.0,
+          fontSize: isTouched ? 25.0 : 0,
           fontWeight: FontWeight.bold,
           color: Colors.white,
           shadows: const [Shadow(color: Colors.black, blurRadius: 2)],
@@ -92,13 +92,3 @@ class CustomPieChartState extends State<CustomPieChart> {
     );
   }
 }
-
-/*
-Row(
-        
-        children: <Widget>[
-          
-          
-        ],
-      )
-*/

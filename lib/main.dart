@@ -98,7 +98,7 @@ class _MyAppState extends State<MyApp> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ManualAlert())),
+                MaterialPageRoute(builder: (context) => ManualAlert())),
             backgroundColor: Colors.blue,
             child: const Icon(Icons.add),
           ),
