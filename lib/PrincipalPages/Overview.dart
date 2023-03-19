@@ -22,7 +22,6 @@ class _OverviewState extends State<Overview> {
       appBar: AppBar(
         title: const Text("Overview"),
         actions: [
-          //TODO:the icon changes when there's a notification
           IconButton(
               onPressed: () {},
               icon: const Icon(
@@ -104,25 +103,11 @@ class _OverviewState extends State<Overview> {
             Statistics(
               title: 'Progress',
               subtitle: 'Today',
-              options: [
-                OptionPopUp(Icons.home, "Option 1", () {
-                  // Do something when Option 1 is pressed
-                }),
-                OptionPopUp(Icons.home, "Option 2", () {
-                  // Do something when Option 2 is pressed
-                }),
-                OptionPopUp(Icons.home, "Option 3", () {
-                  // Do something when Option 3 is pressed
-                }),
-                OptionPopUp(Icons.home, "Option 4", () {
-                  // Do something when Option 4 is pressed
-                })
-              ],
               graph: CustomPieChart(dataPie: [
                 PieChartDataModel(
-                  name: 'pending',
+                  name: 'Pending',
                   value: 25.0,
-                  color: Colors.red,
+                  color: Colors.blue,
                 ),
                 PieChartDataModel(
                   name: 'Progress',
@@ -132,13 +117,13 @@ class _OverviewState extends State<Overview> {
                 PieChartDataModel(
                   name: 'Resolved',
                   value: 10.0,
-                  color: Colors.yellow,
+                  color: Colors.green,
                 ),
                 PieChartDataModel(
                   name: 'Closed',
                   value: 20.0,
                   color: Colors.grey,
-                ),
+                )
               ]),
             ),
           ],
